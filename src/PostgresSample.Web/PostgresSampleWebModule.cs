@@ -37,6 +37,7 @@ using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
+using System;
 
 namespace PostgresSample.Web;
 
@@ -82,6 +83,7 @@ public class PostgresSampleWebModule : AbpModule
 
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 

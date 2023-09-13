@@ -57,7 +57,6 @@ public class PostgresSampleDbContext :
     public PostgresSampleDbContext(DbContextOptions<PostgresSampleDbContext> options)
         : base(options)
     {
-        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
